@@ -15,60 +15,52 @@
               <fieldset class="radio-holder container-1">
                 <legend>Password Length?</legend>
                 <div>
-                    <input type="radio" id="five" name="amount"/>
-                    <label for="five">5</label>
-                </div>
-                <div>
-                    <input type="radio" id="six" name="amount"/>
-                    <label for="six">6</label>
-                </div>
-                <div>
-                    <input type="radio" id="seven" name="amount"/>
-                    <label for="seven">7</label>
-                </div>
-                <div>
-                    <input type="radio" id="eight" name="amount"/>
-                    <label for="eight">8</label>
+                    <select name="length" id="length">
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    <label for="length"></label>
                 </div>
             </fieldset>
-            <br><br>
             <fieldset class="radio-holder container-2">
                 <legend>Uppercase?</legend>
                 <div>
-                    <input type="radio" id="upper" name="case"/>
+                    <input type="radio" id="upper" name="case" value="upper"/>
                     <label for="upper">Yes</label>
                 </div>
                 <div>
-                    <input type="radio" id="lower" name="case"/>
+                    <input type="radio" id="lower" name="case" value="lower"/>
                     <label for="six">No</label>
                 </div>
                 </fieldset>
-                <br><br>
             <fieldset class="radio-holder container-3">
                 <legend>Numbers?</legend>
                 <div>
-                    <input type="radio" id="number" name="numerics"/>
+                    <input type="radio" id="number" name="numerics" value="number"/>
                     <label for="number">Yes</label>
                 </div>
                 <div>
-                    <input type="radio" id="no-number" name="numerics"/>
+                    <input type="radio" id="no-number" name="numerics" value="no-number"/>
                     <label for="no-number">No</label>
                 </div>
             </fieldset>
-            <br><br>
             <fieldset class="radio-holder container-4">
                 <legend>Special Characters?</legend>
                 <div>
-                    <input type="radio" id="special" name="characters"/>
+                    <input type="radio" id="special" name="characters" value="special"/>
                     <label for="special">Yes</label>
                 </div>
                 <div>
-                    <input type="radio" id="basic" name="characters"/>
+                    <input type="radio" id="basic" name="characters" value="basic"/>
                     <label for="basic">No</label>
                 </div>
             </fieldset>
-            <br><br>
-        <button type="submit">Generate Password</button>
+        <button class="submit-button" type="submit">Generate Password</button>
       </form>
     </div>
   </body>
