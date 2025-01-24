@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password-Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <h1 class="header">Here is the Header</h1>
+    <!-- start of single radio group -->
+    <div class="form-container">
+      <form onsubmit="sendData(); return false;">
+        <div class="radio-holder">
+          Radio 1
+          <br />
+          <input type="radio" />
+          <label for="radio">Generic radio</label>
+          <br />
+          <input type="radio" />
+          <label for="radio">Generic radio</label>
+        </div>
+        <!-- end of single radio group -->
+        <br />
+        <br />
+        <button type="submit">generate password</button>
+      </form>
+    </div>
+  </body>
+</html>
