@@ -10,3 +10,7 @@ function sendData() {
 function test() {
   console.log('just testing');
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+  document.getElementById('password-box').defaultValue = 'Password';
+});
