@@ -9,22 +9,66 @@
   </head>
   <body>
     <h1 class="header">Here is the Header</h1>
-    <!-- start of single radio group -->
-    <div class="form-container">
-      <form onsubmit="sendData(); return false;">
-        <div class="radio-holder">
-          Radio 1
-          <br />
-          <input type="radio" />
-          <label for="radio">Generic radio</label>
-          <br />
-          <input type="radio" />
-          <label for="radio">Generic radio</label>
-        </div>
-        <!-- end of single radio group -->
-        <br />
-        <br />
-        <button type="submit">generate password</button>
+    <h4 class="explain-line">Lets create a random password</h4>
+    <form onsubmit="sendData(); return false;">
+                <!-- start of single radio group -->
+              <fieldset class="radio-holder container-1">
+                <legend>Password Length?</legend>
+                <div>
+                    <input type="radio" id="five" name="amount"/>
+                    <label for="five">5</label>
+                </div>
+                <div>
+                    <input type="radio" id="six" name="amount"/>
+                    <label for="six">6</label>
+                </div>
+                <div>
+                    <input type="radio" id="seven" name="amount"/>
+                    <label for="seven">7</label>
+                </div>
+                <div>
+                    <input type="radio" id="eight" name="amount"/>
+                    <label for="eight">8</label>
+                </div>
+            </fieldset>
+            <br><br>
+            <fieldset class="radio-holder container-2">
+                <legend>Uppercase?</legend>
+                <div>
+                    <input type="radio" id="upper" name="case"/>
+                    <label for="upper">Yes</label>
+                </div>
+                <div>
+                    <input type="radio" id="lower" name="case"/>
+                    <label for="six">No</label>
+                </div>
+                </fieldset>
+                <br><br>
+            <fieldset class="radio-holder container-3">
+                <legend>Numbers?</legend>
+                <div>
+                    <input type="radio" id="number" name="numerics"/>
+                    <label for="number">Yes</label>
+                </div>
+                <div>
+                    <input type="radio" id="no-number" name="numerics"/>
+                    <label for="no-number">No</label>
+                </div>
+            </fieldset>
+            <br><br>
+            <fieldset class="radio-holder container-4">
+                <legend>Special Characters?</legend>
+                <div>
+                    <input type="radio" id="special" name="characters"/>
+                    <label for="special">Yes</label>
+                </div>
+                <div>
+                    <input type="radio" id="basic" name="characters"/>
+                    <label for="basic">No</label>
+                </div>
+            </fieldset>
+            <br><br>
+        <button type="submit">Generate Password</button>
       </form>
     </div>
   </body>
