@@ -9,9 +9,9 @@ function randomNum(min, max) {
 function lettersOnly() {
   let holding = [];
   for (let i = 0; i < data[0]; i++) {
-    console.log(password.letters[Math.floor(Math.random() * 26)]);
+    holding.push(password.letters[Math.floor(Math.random() * 26)]);
   }
-  //   console.log(holding);
+  console.log(holding);
 }
 
 //functions for generating password at random
