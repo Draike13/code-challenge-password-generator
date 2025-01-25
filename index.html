@@ -8,9 +8,9 @@
     <script src="script.js"></script>
   </head>
   <body>
-    <h1 class="header">Here is the Header</h1>
+    <h1 class="header">Password Generator</h1>
     <h4 class="explain-line">Lets create a random password</h4>
-    <form onsubmit="sendData(); return false;">
+    <form onsubmit="sendData(length.value, upLow.value, numerics.value, characters.value); return false;">
                 <!-- start of single radio group -->
               <fieldset class="radio-holder container-1">
                 <legend>Password Length?</legend>
@@ -30,11 +30,11 @@
             <fieldset class="radio-holder container-2">
                 <legend>Uppercase?</legend>
                 <div>
-                    <input type="radio" id="upper" name="case" value="upper"/>
+                    <input type="radio" id="upper" name="upLow" value="upper"/>
                     <label for="upper">Yes</label>
                 </div>
                 <div>
-                    <input type="radio" id="lower" name="case" value="lower"/>
+                    <input type="radio" id="lower" name="upLow" value="lower"/>
                     <label for="six">No</label>
                 </div>
                 </fieldset>

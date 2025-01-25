@@ -34,3 +34,7 @@ button:hover {
   display: flex;
   justify-content: left;
 }
+
+.explain-line {
+  margin-left: 1.5rem;
+}
