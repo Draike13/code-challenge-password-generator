@@ -5,13 +5,16 @@ function randomNum(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+//NOTE TO SELF
+//what if i ran the if statements to determine what string to use, and the strings could even be prewritten. or better yet, combined at the time of selection from the object. need to change everything to a string and look at string combining.
+
 //specific password letter function
 function lettersOnly() {
   let holding = [];
   for (let i = 0; i < data[0]; i++) {
     holding.push(password.letters[Math.floor(Math.random() * 26)]);
   }
-  console.log(holding);
+  console.log(holding.join(''));
 }
 function capitalLettersOnly() {
   let holdingC = [];
