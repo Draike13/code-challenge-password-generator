@@ -13,6 +13,21 @@ function lettersOnly() {
   }
   console.log(holding);
 }
+function capitalLettersOnly() {
+  let holdingC = [];
+  for (let i = 0; i < data[0] / 2; i++) {
+    holdingC.push(password.capital()[Math.floor(Math.random() * 26)]);
+  }
+  console.log(holdingC);
+}
+//password symbol funtion to set 1/4 of password to random symbols
+function useSymbols() {
+  let holdingS = [];
+  for (let i = 0; i < data[0] / 4; i++) {
+    holdingS.push(password.symbols[Math.floor(Math.random() * 11)]);
+  }
+  console.log(holdingS);
+}
 
 //functions for generating password at random
 let password = {
