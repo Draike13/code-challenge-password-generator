@@ -26,7 +26,7 @@
                     <label for="upper">Yes</label>
                 </div>
                 <div>
-                    <input type="radio" id="lower" name="upLow" value="lower"/>
+                    <input checked type="radio" id="lower" name="upLow" value="lower"/>
                     <label for="lower">No</label>
                 </div>
                 </fieldset>
@@ -37,7 +37,7 @@
                     <label for="number">Yes</label>
                 </div>
                 <div>
-                    <input type="radio" id="no-number" name="numerics" value="no-number"/>
+                    <input checked type="radio" id="no-number" name="numerics" value="no-number"/>
                     <label for="no-number">No</label>
                 </div>
             </fieldset>
@@ -48,16 +48,17 @@
                     <label for="special">Yes</label>
                 </div>
                 <div>
-                    <input type="radio" id="basic" name="characters" value="basic"/>
+                    <input checked type="radio" id="basic" name="characters" value="basic"/>
                     <label for="basic">No</label>
                 </div>
             </fieldset>
         <div class="generate-holder">
             <button class="submit-button" type="submit">Generate Password</button>
-            <input id="password-box" class="password-input" type="text">
+            <input  placeholder="Password" id="password-box" class="password-input" type="text">
         </div>
     </form>
-    <button onclick="test()" >test</button>
+    <!-- <button onclick="generatePassword()"></button> -->
+    <!-- <button onclick="lettersOnly()" >test</button> -->
     </div>
   </body>
 </html>

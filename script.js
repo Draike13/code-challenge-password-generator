@@ -1,62 +1,8 @@
 let data = [];
 let passwordBlock;
 
-// basic random number function
-// function randomNum(min, max) {
-//   return Math.floor(Math.random() * (max - min + 1)) + min;
-// }
-
-//NOTE TO SELF
-//what if i ran the if statements to determine what string to use, and the strings could even be prewritten. or better yet, combined at the time of selection from the object. need to change everything to a string and look at string combining.
-
-// mega function to run the big logic for password generation
-function generatePassword() {
-  switch (data) {
-    case (data[1] = 1):
-      passwordBlock = passwordBlock + password.capital;
-    case (data[2] = 1):
-      passwordBlock = passwordBlock + password.numbers;
-    case (data[3] = 1):
-      passwordBlock = passwordBlock + password.symbols;
-  }
-}
-
-//specific password letter function
-function lettersOnly() {
-  let holding = [];
-  for (let i = 0; i < data[0]; i++) {
-    holding.push(password.letters[Math.floor(Math.random() * 26)]);
-  }
-  console.log(holding.join(''));
-}
-// function capitalLettersOnly() {
-//   let holdingC = [];
-//   for (let i = 0; i < data[0] / 2; i++) {
-//     holdingC.push(password.capital()[Math.floor(Math.random() * 26)]);
-//   }
-//   console.log(holdingC);
-// }
-//password symbol funtion to set 1/4 of password to random symbols
-// function useSymbols() {
-//   let holdingS = [];
-//   for (let i = 0; i < data[0] / 4; i++) {
-//     holdingS.push(password.symbols[Math.floor(Math.random() * 11)]);
-//   }
-//   console.log(holdingS);
-// }
-
-//functions for generating password at random
-let password = {
-  letters: 'abcdefghijklmnopqrstuvwxyz',
-  get capital() {
-    return this.letters.toUpperCase();
-  },
-  symbols: '!@#$%^&*()-',
-  numbers: '0123456789',
-};
-
+//function to collect data from form
 function sendData(length, upLow, num, special) {
-  //collect data from form
   data[0] = Number(length);
   if (upLow === 'upper') {
     data[1] = 1;
@@ -75,16 +21,47 @@ function sendData(length, upLow, num, special) {
   } else if (special === 'basic') {
     data[3] = 0;
   } else return console.error('nothing selected');
-
-  console.log(data);
-  // console.log(`${length},${upLow},${num},${special}.`);
+}
+//function to run the big logic for password generation and then call the sorter
+function generatePassword() {
+  passwordBlock = '';
+  for (let i = 0; i < data.length; i++) {
+    if (data[i]) {
+      if (i === 0) {
+        passwordBlock += password.letters;
+      } else if (i === 1) {
+        passwordBlock += password.capital;
+      } else if (i === 2) {
+        passwordBlock += password.numbers;
+      } else if (i === 3) {
+        passwordBlock += password.symbols;
+      } else {
+        alert('Look again, you missed something!');
+      }
+    }
+  }
+  passwordSort();
 }
 
-//event listener to run something after the dom has loaded once. solves for 'null' response error
-document.addEventListener('DOMContentLoaded', function () {
-  document.getElementById('password-box').defaultValue = 'Password';
-  passwordBlock = password.letters;
-});
+//function to sort the string for random characters and output the new password
+function passwordSort() {
+  let holding = [];
+  for (let i = 0; i < data[0]; i++) {
+    holding.push(passwordBlock[Math.floor(Math.random() * passwordBlock.length)]);
+  }
+  document.getElementById('password-box').value = holding.join('');
+  console.log(holding.join(''));
+}
+
+//functions for generating password at random
+let password = {
+  letters: 'abcdefghijklmnopqrstuvwxyz',
+  get capital() {
+    return this.letters.toUpperCase();
+  },
+  numbers: '0123456789',
+  symbols: '!@#$%^&*()-',
+};
 
 function test() {
   console.log(passwordBlock);
