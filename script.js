@@ -8,6 +8,8 @@ let data = [];
 //NOTE TO SELF
 //what if i ran the if statements to determine what string to use, and the strings could even be prewritten. or better yet, combined at the time of selection from the object. need to change everything to a string and look at string combining.
 
+// mega function to run the big logic for password generation
+
 //specific password letter function
 function lettersOnly() {
   let holding = [];
@@ -35,8 +37,9 @@ function lettersOnly() {
 //functions for generating password at random
 let password = {
   letters: 'abcdefghijklmnopqrstuvwxyz',
-  capital: this.letters.toUpperCase(),
-
+  get capital() {
+    return this.letters.toUpperCase();
+  },
   symbols: '!@#$%^&*()-',
   numbers: '0123456789',
 };

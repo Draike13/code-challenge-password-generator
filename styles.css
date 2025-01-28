@@ -38,3 +38,7 @@ button:hover {
 .explain-line {
   margin-left: 1.5rem;
 }
+
+.length-input {
+  min-width: 14.5rem;
+}
