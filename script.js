@@ -1,4 +1,5 @@
 let data = [];
+let passwordBlock;
 
 // basic random number function
 // function randomNum(min, max) {
@@ -9,6 +10,16 @@ let data = [];
 //what if i ran the if statements to determine what string to use, and the strings could even be prewritten. or better yet, combined at the time of selection from the object. need to change everything to a string and look at string combining.
 
 // mega function to run the big logic for password generation
+function generatePassword() {
+  switch (data) {
+    case (data[1] = 1):
+      passwordBlock = passwordBlock + password.capital;
+    case (data[2] = 1):
+      passwordBlock = passwordBlock + password.numbers;
+    case (data[3] = 1):
+      passwordBlock = passwordBlock + password.symbols;
+  }
+}
 
 //specific password letter function
 function lettersOnly() {
@@ -48,21 +59,21 @@ function sendData(length, upLow, num, special) {
   //collect data from form
   data[0] = Number(length);
   if (upLow === 'upper') {
-    data[1] = 0;
-  } else if (upLow === 'lower') {
     data[1] = 1;
+  } else if (upLow === 'lower') {
+    data[1] = 0;
   } else return console.error('nothing selected');
 
   if (num === 'number') {
-    data[2] = 0;
-  } else if (num === 'no-number') {
     data[2] = 1;
+  } else if (num === 'no-number') {
+    data[2] = 0;
   } else return console.error('nothing selected');
 
   if (special === 'special') {
-    data[3] = 0;
-  } else if (special === 'basic') {
     data[3] = 1;
+  } else if (special === 'basic') {
+    data[3] = 0;
   } else return console.error('nothing selected');
 
   console.log(data);
@@ -72,4 +83,9 @@ function sendData(length, upLow, num, special) {
 //event listener to run something after the dom has loaded once. solves for 'null' response error
 document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('password-box').defaultValue = 'Password';
+  passwordBlock = password.letters;
 });
+
+function test() {
+  console.log(passwordBlock);
+}

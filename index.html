@@ -10,7 +10,7 @@
   <body>
     <h1 class="header">Password Generator</h1>
     <h4 class="explain-line">Lets create a random password</h4>
-    <form onsubmit="sendData(length.value, upLow.value, numerics.value, characters.value);return false;">
+    <form onsubmit="sendData(length.value, upLow.value, numerics.value, characters.value);generatePassword();return false;">
               <fieldset class="radio-holder container-1">
                 <legend>Password Length?</legend>
                 <div>
@@ -57,7 +57,7 @@
             <input id="password-box" class="password-input" type="text">
         </div>
     </form>
-    <button onclick="lettersOnly()" >test</button>
+    <button onclick="test()" >test</button>
     </div>
   </body>
 </html>
