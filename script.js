@@ -3,7 +3,7 @@ let passwordBlock;
 
 //function to collect data from form
 function sendData(length, upLow, num, special) {
-  data[0] = Number(length);
+  data[0] = length;
   if (upLow === 'upper') {
     data[1] = 1;
   } else if (upLow === 'lower') {
@@ -49,6 +49,31 @@ function passwordSort() {
   for (let i = 0; i < data[0]; i++) {
     holding.push(passwordBlock[Math.floor(Math.random() * passwordBlock.length)]);
   }
+  verifyPassword(holding);
+}
+
+//verification function to check if each set that is chosen(first loop) is contained in the holding array(second loop) then either breaking early and retrying with a new data set, or finishing and outputing the password
+function verifyPassword(holding) {
+  const keys = Object.keys(password);
+
+  for (let i = 0; i < keys.length; i++) {
+    if (!data[i]) continue;
+
+    const set = password[keys[i]];
+    let found = false;
+
+    for (let char of set) {
+      if (holding.includes(char)) {
+        found = true;
+        break;
+      }
+    }
+    if (!found) {
+      console.log('The password isnt strong enough...retrying!');
+      passwordSort();
+      return;
+    }
+  }
   document.getElementById('password-box').value = holding.join('');
   console.log(holding.join(''));
 }
@@ -62,7 +87,3 @@ let password = {
   numbers: '0123456789',
   symbols: '!@#$%^&*()-',
 };
-
-function test() {
-  console.log(passwordBlock);
-}
